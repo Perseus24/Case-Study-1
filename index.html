@@ -1,15 +1,239 @@
 <!DOCTYPE html>
 <html>
+    
   <head>
-    <title>My GitHub Pages Site</title>
+    <style>
+        body {font-family: 'Tahoma', sans-serif;}
+        p {
+        text-indent: 30pt;
+        }
+        
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 50%;
+        }
+        
+        .lineSpace{
+            line-height: 1.5;
+        }
+        /* Add a black background color to the top navigation */
+        
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+         }
+    </style>
+    <title>Case Study</title>
   </head>
-  <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my GitHub Pages site!
-    here is a graph!
-    <div class="flourish-embed flourish-chart" data-src="visualisation/14076422">
-      <script src="https://public.flourish.studio/resources/embed.js"></script>
+  
+  
+  <body <div style="margin-top:50px; margin-bottom: 100px; margin-left: 90px; margin-right: 80px; text-align: justify"></div>
+
+    <div class="topnav">
+        <a href="#contact">Home</a>
+        <a href="#news">Events</a>
+        <a class="active" href="#Portfolio">Portfolio</a>
+        <a href="#about">About Me</a>
     </div>
-    </p>
-  </body>
+  
+  
+  <br><br><br>
+    <h1 style="text-align: center">Case Study: How Does a Bike-Share Navigate Speedy Success?</h1>
+    <br>
+    <hr>
+    <h4>From: Google Data Analytics Course</h4>
+    <h4>Author: Cy Jay Herrera</h4>
+    <h4>Last updated: June 13, 2023</h4>
+    
+    <br>
+    <h2> About the Company </h2>
+    <p>In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.</p>
+    <p>​Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.</p>
+    <p>​Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, Moreno believes there is a very good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.</p>
+    <p>​Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.</p>
+    <hr>
+    
+    <h3>Business question:</h3>
+    <p>How do annual members and casual riders use Cyclistic bikes differently?</p>
+    <h3>Data sources:</h3>
+    <p><a href="https://divvy-tripdata.s3.amazonaws.com/index.html">Link source</a></p>
+    <p>​The data has been made available by Motivate International Inc. under this <a href ="https://www.divvybikes.com/data-license-agreement">license.</a> </p>
+    <h3>Limitations:</h3>
+    <p>The study only includes the months, April 2022 to March 2023. It also does not have access to the riders' personal information and the member IDs. Only the number of rides, their geographic locations, and their time and date are only considered for this study.</p>
+    <h3>Data structure:</h3>
+    <p>Each raw data has 13 columns.</p>
+    <p>[1] <i>ride_id</i> -> a unique ID for each rides registered.</p>
+    <p>[2] <i>rideable_type</i> -> type of bike used</p>
+    <p>[3] <i>started_at</i> -> mm/dd/yyyy hh:mm:ss</p>
+    <p>[4] <i>ended_at</i> -> mm/dd/yyyy hh:mm:ss</p>
+    <p>[5] <i>start_station_name</i> -> the name of the station the ride started</p>
+    <p>[6] <i>start_station_id</i> -> a unique ID for each station</p>
+    <p>[7] <i>end_station_name</i> -> the name of the station the ride ended</p>
+    <p>[8] <i>end_station_id</i> -> a unique ID for each station</p>
+    <p>[9] <i>start_lat</i> -> starting latitude</p>
+    <p>[10] <i>start_lng</i> -> starting longitude</p>
+    <p>[11] <i>end_lat</i> -> starting latitude</p>
+    <p>[12] <i>end_lng</i> -> starting longitude</p>
+    <p>[13] <i>member_casual</i> -> type of rider​</p>
+    
+    <h3>Data cleaning and manipulation tools used:</h3>
+    <ul>
+        <li>Microsoft Excel</li>
+        <p>​Excel was used to store the data downloaded from the source. Additional columns were added to the original file to better clean the raw data:</p>
+        <ol>
+            <li style ="font-family: bellota-regular; margin-right: 400px;">The column <i>started_at</i> (mm/dd/yyyy hh:mm:ss) was split into two columns:
+                <i>date_started</i> and <i>time_started</i> in order to get the date part and the time part separately.</li>
+            <br>
+            <li style ="font-family: bellota-regular; margin-right: 400px;">A new column <i>ride_length</i> (hh:mm:ss) was created by calculating the difference 
+                between the <i>time_ended</i> and <i>time_started</i> in order to show the total length of time spent by a rider.</li>
+            <br>
+            <li style ="font-family: bellota-regular; margin-right: 400px;">A new column <i>common_day_of_week</i> was created by identifying the day of week 
+                (an integer) on the <i>date_started</i>. 1 for Sunday...7 for Saturday.</li>
+        </ol>
+        <p>​After cleaning, each of the tables were then transformed into a new pivot table to summarized the findings. The pivot table includes the average ride length, maximum ride length, common day of week, and total rides each month.</p>
+    
+        <li>Structured Query Language (SQL)</li>
+        <p>​A temporary database was created using phpmyadmin in order to store the tables and create meaningful queries to summarize data among the different months. The queries proved to be useful to show the relationships between variables for the different months.</p>
+    
+        <li>Rstudio (R programming language)</li>
+        <p>Rstudio was mainly used as a cleaning tool. The use of different packages was found to be effective in order to summarize data, identify anomalies, and clean tables.</p>
+    
+        <li>Tableau Desktop</li>
+        <p>In order to generate meaningful data visualizations, Tableau was used especially in creating geographical visualizations and other charts.</p>
+        
+        <li>Flourish</li>
+        <p>​Just like Tableau, Flourish was used to create summarized charts and graphs which has the option to embed the code to a website.</p>
+        
+    </ul>
+    <br>
+    <hr>
+    
+    <h2>Analysis and Data Visualizations</h2>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/14076422">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+        <div class="column">
+            <br><br><br>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/14092689">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+    </div>
+    
+    <ul style = "margin-right: 650px">
+        <li class = "lineSpace">The month of <b>July</b> recorded the <b>highest number of rides</b> totaling to <b>823,488</b>.</li>
+        <li class = "lineSpace">The month of <b>December</b> recorded the <b>lowest number of rides</b> totaling to <b>181,806</b>.</li>
+        <li class = "lineSpace">In all the 12 months, <b>member</b> riders <b>dominated</b> the majority of total rides.</li>
+        <li class = "lineSpace"><b>Winter season</b> (December to February) generates the <b>lowest</b> total rides, while the 
+            <b>summer season</b> (June to August) generates the <b>highest</b> total rides.</li>
+    </ul>
+    <br>
+    
+    <div class="flourish-embed flourish-chart" data-src="visualisation/14090162">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+    
+    <ul style = "margin-right: 650px">
+        <li class = "lineSpace"><b>Casual riders</b> preferred to use <b>electric bikes</b> while <b>member riders</b> preferred to use <b>classic bikes</b>.</li>
+        <li class = "lineSpace"><b>Docked bikes</b> seemingly are only used by <strong>casual riders</strong>.</li>
+    </ul>
+    <br>
+    
+    <div class="row">
+        <div class="column">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/14076574">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+            
+            <ul>
+                <li class = "lineSpace"><b>Casual riders</b> has the <b>highest</b> average ride length for 11 months.</li>
+                <li class = "lineSpace">The <b>highest</b> average ride length was <b>24.32 minutes</b>, which was on the month of <b>May</b> generated by <b>casual riders</b>.</li>
+                <li class = "lineSpace">The <b>highest</b> average ride length for both riders was recorded on the month of <b>May</b>.</li>
+                <li class = "lineSpace">From <b>June 2022 to March 2023</b>, the average ride length of member riders was only <b>less than 10 minutes</b>.</li>
+            </ul>
+        </div>
+        <div class="column">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/14093493">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+            <ul>
+                <li>The <b>maximum</b> ride length was <b>23.95 hours</b>, which was on the month of <b>July</b> generated by a <b>casual rider</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    
+    <div class="row">
+        <div class="column">
+            <div class="flourish-embed flourish-radar" data-src="visualisation/14097810">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+        <div class="column">
+            <div class="flourish-embed flourish-radar" data-src="visualisation/14116576">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+    </div>
+    
+    <ul style = "margin-right: 650px">
+        <li class = "lineSpace">Rides are <b>increasing</b> from <b>12:00 NN to 21:00 PM</b>. </li>
+        <li class = "lineSpace">For <b>12 months</b>, the number of rides are <b>highest</b> between <b>16:00 PM to 18:00 PM</b>.</li>
+        <li class = "lineSpace">The <b>all-time highest</b> number of rides was recorded on <b>August 2022 at 17:00 PM</b>, combining all days, totaling to <b>80,443</b>.</li>
+        <li class = "lineSpace"><b>Member riders</b> are more <b>increasingly active</b> than casual riders <b>as early as 6:00 AM</b></li>
+    </ul>
+    
+    <br>
+    <hr>
+    
+    <h2>Key Findings</h2>
+    <p>Upon transforming raw data into meaningful visualizations and relationships, the researcher presents three points:</p>
+    <ol>
+        <li>There are more rides from an annual member than casual riders all throughout the year.</li>
+        <li>Casual riders spent more time riding a bicycle than member riders. </li>
+        <li>The majority of morning rides came from member riders. While both riders are significantly active during the afternoon.</li>
+    </ol>
+    
+    <p>From the data gathered from the months March 2022 to April 2023, member riders are the majority all throughout the year. We can therefore infer that member riders often used the cyclistic bikes than the casual riders. Without other information such as the updated number of bikes available, we can only assume that casual riders are less than member riders because of the limited bikes available, and that because member riders have a subscription, thus they may always be prioritized.</p>
+    <p>There is also a noticeable trend in the total number of rides per month. During the summer season in the United States, which is from June to August, it records the highest number of rides for those three months - of which member rides hit 400,000 while casual rides hit 350,000 every month. After the summer season, the number of rides is slowly decreasing until the winter season, which is from December to February, where those months recorded the lowest number of rides - member rides only hit 130,000 while casual rides only hit 40,000 every month.​</p>
+    <p>​In the case of the types of bikes used, there are no significant relation between the rider type and the type of bike. Only that docked bikes are rarely used, of which only a very small portion of casual riders uses it.</p>
+    <p>​For the next graph, it shows the average length of ride for both years in a year whereas one value stands out. For the month of May 2022, the average length for casual riders was a very high 24.32 minutes as opposed to the member riders' 12.9 minutes, yet both values are the highest throughout the year. The rest of the year, the length dropped to no more than 12 minutes for both type of riders.  While the next graph shows no significant relation between the maximum ride length for both type of riders and the different months.</p>
+    <p>​Lastly, it can be infer from the last graph that both type of riders are very active especially in the afternoon throughout the year, with the peak between 17:00 PM to 18:00 PM. Although member riders can be seen as the majority during the morning as early as 5:00 AM to 11:00 AM. While on the next graph, there are no significant relation between the day and the number of riders as the graph shows no commonality between the three variables presented: the type of rider, day of week, and the month.</p>
+    
+    <br>
+    
+    <h2>Recommendations</h2>
+    
+    <ol>
+        <li>The company should add more bicycles during the summer season to better accommodate the surge of riders and to even invite more riders.</li>
+        <li>Ensure that there are sufficient bicycles on every station to not just accommodate the annual member riders but also to the casual riders, which will be helpful in order to experience it themselves and have a chance to subscribe to the company.</li>
+        <li>Investigate why there is a sudden and large increase in average ride length in May 2022 as this may provide future trends and would be beneficial to the company.</li>
+    </ol>
+
+    </body>
 </html>
