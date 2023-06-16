@@ -102,13 +102,13 @@
         <li>Microsoft Excel</li>
         <p>​Excel was used to store the data downloaded from the source. Additional columns were added to the original file to better clean the raw data:</p>
         <ol>
-            <li style ="font-family: bellota-regular; margin-right: 400px;">The column <i>started_at</i> (mm/dd/yyyy hh:mm:ss) was split into two columns:
+            <li style ="font-family: bellota-regular; margin-right: 45%;">The column <i>started_at</i> (mm/dd/yyyy hh:mm:ss) was split into two columns:
                 <i>date_started</i> and <i>time_started</i> in order to get the date part and the time part separately.</li>
             <br>
-            <li style ="font-family: bellota-regular; margin-right: 400px;">A new column <i>ride_length</i> (hh:mm:ss) was created by calculating the difference 
+            <li style ="font-family: bellota-regular; margin-right: 45%;">A new column <i>ride_length</i> (hh:mm:ss) was created by calculating the difference 
                 between the <i>time_ended</i> and <i>time_started</i> in order to show the total length of time spent by a rider.</li>
             <br>
-            <li style ="font-family: bellota-regular; margin-right: 400px;">A new column <i>common_day_of_week</i> was created by identifying the day of week 
+            <li style ="font-family: bellota-regular; margin-right: 45%;">A new column <i>common_day_of_week</i> was created by identifying the day of week 
                 (an integer) on the <i>date_started</i>. 1 for Sunday...7 for Saturday.</li>
         </ol>
         <p>​After cleaning, each of the tables were then transformed into a new pivot table to summarized the findings. The pivot table includes the average ride length, maximum ride length, common day of week, and total rides each month.</p>
