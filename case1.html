@@ -44,7 +44,7 @@
           text-align: center;
           padding: 0.9114583333333334vw 1.0416666666666667vw;
           text-decoration: none;
-          font-size: 1.1067708333333333vw;
+          font-size: 1.1067708333333333vw; /* or 0.8vw*/
         }
 
         /* Change the color of links on hover */
@@ -83,6 +83,82 @@
             padding: 40px;
             color: white;
             text-align: left;
+            
+        }
+
+        
+        .container2{
+             display: flex;
+             justify-content: center;
+             margin: auto;
+             margin-top: 4vh;
+             width:90vw;
+             background-color: #142a2e;
+         }
+        
+         .box1{
+             color: #FFFFFF;
+             width: 50vw;
+             height: 28vh;
+             margin: 2vh;
+             background-color: #142a2e;
+             position: relative;
+             
+         }
+         .box2{
+             color: #FFFFFF;
+             width: 20vw;
+             height: 28vh;
+             margin: 2vh;
+             background-color: #142a2e;
+             position: relative;
+         }
+         .box3{
+             color: #FFFFFF;
+             width: 30vw;
+             height: 28vh;
+             margin: 2vh;
+             position: relative;
+             background-color: #142a2e;
+             display: flex;
+             justify-content: center;
+         }
+         .logos{
+             width: 3vw;
+             height:auto;
+             margin: 0.5vh;
+             margin-top: 10vh;
+             bottom:0;
+         }
+         .links{
+             width: 27vw;
+             height:auto;
+             margin: 0.5vh;
+             
+         }
+         .otherLinks{
+            width: 100%;
+            height: 40%;
+            bottom:0;
+            top: auto;
+            margin-left: 0.5vw;
+            position: absolute;
+            column-gap: 10vw;
+        }
+        
+         .center {
+            position: absolute;
+            top: 50%;
+            
+            transform: translate(0, -50%);
+        }
+        
+        div.sticky{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 9999;
         }
     </style>
     <title>Case Study</title>
@@ -90,24 +166,28 @@
   
   
   <body>
-
-    <div class = "bm">
-            <div class="topRight">
-                <div class="topnav">
-                    <a href="home.html">HOME</a>
-                    <a href="#news">RANDOM EVENTS</a>
-                    <a class="active" href="#Portfolio">PORTFOLIO</a>
-                    <a href="#about">ABOUT US</a>
+      
+        <div class = "bm">
+                    <div class="topRight" >
+                        <div class="topnav">
+                            <a href="home.html">HOME</a>
+                            <a href="#news">RANDOM EVENTS</a>
+                            <a href="#dataviz">DATA VIZ</a>
+                            <a class="active" href="portfolio.html">PORTFOLIO</a>
+                            <a href="#about">ABOUT US</a>
+                        </div>
+                    </div>
+                <div class="content">
+                    <h1 style = "font-size: 50px">Case Study: How Does a Bike-Share Navigate Speedy Success?</h1>
+                    <h4>From: Coursera, Google Data Analytics Course</h4>
+                    <h4>Author: Cy Jay Herrera</h4>
+                    <h4>Last updated: June 13, 2023</h4>
                 </div>
-            </div>
-            <div class="content">
-                <h1 style = "font-size: 50px">Case Study: How Does a Bike-Share Navigate Speedy Success?</h1>
-                <h4>From: Google Data Analytics Course</h4>
-                <h4>Author: Cy Jay Herrera</h4>
-                <h4>Last updated: June 13, 2023</h4>
-            </div>
-    </div>
+        </div>
+      
     
+ 
+      
     <div style ="margin-left: 10%; margin-right: 10%; text-align: justify">
 
         <br>
@@ -279,5 +359,43 @@
             <li>Investigate why there is a sudden and large increase in average ride length in May 2022 as this may provide future trends and would be beneficial to the company.</li>
         </ol>
     </div>
+      <br><br>
+      
+      <div class="container2">
+            <div class="box1" >
+                <div class="center">
+                    <h4 style="margin: 1em; text-align: center">A website made to house my future accomplishments. May this website grow (fingers crossed) - Herrera, 06-11-2023.</h4>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="center">
+                    <h4 style="text-align: center">Brgy. Matagbac, Tabaco City, Albay, Philippines</h4>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="logos" style="margin-top: 3.8vh; line-height: 4.8vh;">
+                    <img src="gmail.svg" style="width:1.5em; height:1.5em;"> 
+                    <img src="github.svg" style="width:1.5em; height:1.5em;"> 
+
+                </div>
+                <div class="links" style="line-height: 2.7vh">
+                    <h5>herreracyjay24@gmail.com</h5> 
+                    <h5><a href="https://github.com/Perseus24" style="color:white" target="_blank">https://github.com/Perseus24</a></h5> 
+
+                </div>
+                <div class="otherLinks" style="line-height: 4.8vh;">
+                    <a href="https://www.linkedin.com/in/cy-jay-herrera-74b297268/" target="_blank">
+                        <img src="linkedin.svg" style="width:1.5em; height:1.5em; margin-right: 0.7vw;">
+                    </a>
+                    <a href="https://www.facebook.com/cyj.herrera.9" target="_blank">
+                        <img src="facebook.svg" style="width:1.5em; height:1.5em; margin-right: 0.7vw;"> 
+                    </a>
+                    <a href="https://www.coursera.org/user/fa1fab88f7fb667a28d12163972ac3a2" target="_blank">
+                        <img src="coursera.svg" style="width:1.5em; height:1.5em;"> 
+                    </a>
+                </div>
+            </div>
+            
+        </div>
     </body>
 </html>
