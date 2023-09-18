@@ -111,18 +111,30 @@
              display: flex;
              justify-content: left;
              margin-left: 3vw;
+             margin: auto;
          }
 
          .boxes{
              width: 30vw;
              height: 28vh;
              margin: 2vh;
+             position: relative;
              
          }
          .boxes:hover {
              background-color: #E2DFD2;
          }
          
+         .boxes1{
+             width: 30vw;
+             height: 28vh;
+             margin: 2vh;
+             position: relative;
+             
+         }
+         .boxes1:hover {
+             background-color: #E2DFD2;
+         }
          .container2{
              display: flex;
              justify-content: center;
@@ -205,6 +217,9 @@
                 if(word === "first"){
                     window.location.href = ("case1.html");
                 }
+                else if(word=== "second"){
+                    window.location.href = ("case2.html");
+                }
             }
         
         </script>
@@ -235,8 +250,8 @@
             </div>
             
             <div class="content">
-                <h4>Case Study: How Does a Bike-Share Navigate Speedy Success?</h4>
-                <h4>June 13, 2023</h4>
+                <h4>Case Study: What drives an E-commerce company to success?</h4>
+                <h4>July 6, 2023</h4>
             </div>
             
         </div>
@@ -245,13 +260,19 @@
             <span id="first" onclick="openCT('first')" style="cursor: pointer;">
                 <div class="boxes" style=" display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start">
                     <h4 style="margin: 1em;">Case Study: How Does a Bike-Share Navigate Speedy Success?</h4>
-                    <h5 style="margin: 1em;">July 13, 2023</h5>
+                    <h5 style="margin: 1em;">June 13, 2023</h5>
                 </div>   
             </span>
-
             
-        
+            <span id="first" onclick="openCT('second')" style="cursor: pointer;">
+                <div class="boxes1" style=" display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start">
+                    <h4 style="margin: 1em;">Case Study: What drives an E-commerce company to success?</h4>
+                    <h5 style="margin: 1em;">July 6, 2023</h5>
+                </div>   
+            </span>
         </div>
+        
+            
         
         <div class="container2">
             <div class="box1" >
